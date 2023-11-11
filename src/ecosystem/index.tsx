@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { ERoutes } from "../enums/route-urls";
+import { withLoadingHandler } from "./wrappers/LoadingHandler";
 
 const App = () => {
   return (
@@ -17,4 +18,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default withLoadingHandler(App);
