@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./ecosystem";
@@ -10,9 +10,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename={window._env_.REACT_APP_BASE_DIRECTORY}>
-      <App />
-    </BrowserRouter>
+    <Suspense fallback={<h1>loading...</h1>}>
+      <BrowserRouter basename={window._env_.REACT_APP_BASE_DIRECTORY}>
+        <App />
+      </BrowserRouter>
+    </Suspense>
   </React.StrictMode>
 );
 
