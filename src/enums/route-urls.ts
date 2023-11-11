@@ -1,4 +1,4 @@
 export enum ERoutes {
-  HOME_PAGE = "homepage",
-  DEATIL_COUNTRY = "detail",
+  HOME_PAGE = "/homepage",
+  DEATIL_COUNTRY = "/detail",
 }
