@@ -2,11 +2,11 @@ import { ICountryState } from "./modules/entities/countries/types";
 import { IMainState } from "./modules/main/types";
 
 export const onInitializeMainStore = (
-  initialState: IMainState = { isLoading: false, excepttion: false }
+  initialState: IMainState = { isLoading: false, exception: false }
 ): IMainState => {
   const tempState: IMainState = {
     isLoading: false,
-    excepttion: false,
+    exception: false,
   };
   return { ...initialState, ...tempState };
 };

@@ -1,6 +1,6 @@
 export interface IMainState {
   isLoading: boolean;
-  excepttion: boolean;
+  exception: boolean;
 }
 
 enum Etypes {

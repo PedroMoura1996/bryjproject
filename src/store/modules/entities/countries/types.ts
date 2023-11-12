@@ -13,6 +13,7 @@ export interface ICountryState {
 
 enum Etypes {
   SLICE_NAME = "countries",
+  THUNK_COUNTRIES = "Country/getlistas",
 }
 
 export default Etypes;

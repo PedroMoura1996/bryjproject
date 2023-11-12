@@ -10,5 +10,5 @@ export const isLoadingSelector = createSelector(
 );
 export const hasExceptionSelector = createSelector(
   selectSelf,
-  ({ excepttion }): boolean => excepttion
+  ({ exception }): boolean => exception
 );
