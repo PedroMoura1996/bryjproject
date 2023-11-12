@@ -1,21 +1,24 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 import "./index.css";
 import App from "./ecosystem";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import store from "./store";
+import { BryjLoader } from "./ecosystem/atoms/BryjLoader";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <Suspense fallback={<h1>loading...</h1>}>
+  <Suspense fallback={<BryjLoader />}>
+    <Provider store={store}>
       <BrowserRouter basename={window._env_.REACT_APP_BASE_DIRECTORY}>
         <App />
       </BrowserRouter>
-    </Suspense>
-  </React.StrictMode>
+    </Provider>
+  </Suspense>
 );
 
 // If you want to start measuring performance in your app, pass a function
