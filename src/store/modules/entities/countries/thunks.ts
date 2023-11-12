@@ -1,15 +1,14 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import Etypes from "./types";
-import httpClient from "../../../httpclient";
-import EServicesUrl from "../../../../enums/service-urls";
+import { retrieveCountriesService } from "./services/request";
+import { modelCountriesData } from "./services/models";
 
 export const retrieveCountriesThunk = createAsyncThunk(
   Etypes.THUNK_COUNTRIES,
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await httpClient.get(EServicesUrl.ALL_COUNTRIES);
-      console.log(data);
-      return { data };
+      const response = await retrieveCountriesService();
+      return modelCountriesData(response);
     } catch (err) {
       rejectWithValue(err);
     }
