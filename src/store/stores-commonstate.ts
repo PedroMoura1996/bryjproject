@@ -1,3 +1,4 @@
+import { ICountryState } from "./modules/entities/countries/types";
 import { IMainState } from "./modules/main/types";
 
 export const onInitializeMainStore = (
@@ -7,5 +8,11 @@ export const onInitializeMainStore = (
     isLoading: false,
     excepttion: false,
   };
+  return { ...initialState, ...tempState };
+};
+export const onInitializeCountryStore = (
+  initialState: ICountryState = { countries: [] }
+): ICountryState => {
+  const tempState: ICountryState = { countries: [] };
   return { ...initialState, ...tempState };
 };
