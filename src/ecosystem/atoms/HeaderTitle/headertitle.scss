@@ -1,0 +1,17 @@
+@import "../../../variables";
+.header-title-container {
+  display: flex;
+  .header-title {
+    border: 0.3rem solid $bryj-dark-text;
+    font-size: 4rem;
+    border-left: none;
+    border-right: none;
+  }
+  @media screen and (max-width: 899px) {
+    align-items: center;
+    justify-content: center;
+    .header-title {
+      font-size: 2.5rem;
+    }
+  }
+}
