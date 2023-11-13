@@ -15,7 +15,7 @@ export const onInitializeCountryStore = (
     countries: [],
     luckyCountry: {
       name: "",
-      capital: [""],
+      capital: "",
       region: "",
       subregion: "",
       flag: "",
@@ -29,7 +29,7 @@ export const onInitializeCountryStore = (
     countries: [],
     luckyCountry: {
       name: "",
-      capital: [""],
+      capital: "",
       region: "",
       subregion: "",
       flag: "",

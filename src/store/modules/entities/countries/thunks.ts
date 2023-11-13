@@ -17,7 +17,7 @@ export const retrieveCountriesThunk = createAsyncThunk(
       dispatch(
         countries.actions.updateLuckyCountry({
           ...(luckyCountry || {
-            capital: [""],
+            capital: "",
             flag: "",
             name: "",
             population: 0,

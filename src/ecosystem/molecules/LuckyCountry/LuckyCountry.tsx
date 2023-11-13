@@ -3,7 +3,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import countries from "../../../store/modules/entities/countries";
 import { useAppDispatch, useAppSelector } from "../../../store/reduxTyping";
-import { convertToLowerCase } from "../../../utils/util";
+import { convertToLowerCase, isNull } from "../../../utils/util";
 import { useTheme } from "../../wrappers/ThemeProvider/ThemeProvider";
 
 const LuckyCountry = () => {
@@ -24,11 +24,6 @@ const LuckyCountry = () => {
   const revealHandler = () => {
     dispatch(countries.actions.updateGuessCountry(luckyCountry.name));
     dispatch(countries.actions.updateGuessCapital(luckyCountry.capital[0]));
-  };
-
-  const checkArrayisEmpty = () => {
-    if (luckyCountry.capital.length === 0) return "";
-    return luckyCountry.capital;
   };
 
   return (
@@ -54,17 +49,20 @@ const LuckyCountry = () => {
         }
         onChange={onChangeName}
       />
-      <TextField
-        className="lucky-country-guess-capital grid-item"
-        variant="outlined"
-        label="Country's Capital"
-        value={guessCapital}
-        onChange={onChangeCapital}
-        error={
-          convertToLowerCase(guessCapital) !==
-          convertToLowerCase(checkArrayisEmpty()[0])
-        }
-      />
+      {/* some countries do not bring a capital */}
+      {isNull(luckyCountry.capital) ? null : (
+        <TextField
+          className="lucky-country-guess-capital grid-item"
+          variant="outlined"
+          label="Country's Capital"
+          value={guessCapital}
+          onChange={onChangeCapital}
+          error={
+            convertToLowerCase(guessCapital) !==
+            convertToLowerCase(luckyCountry.capital)
+          }
+        />
+      )}
       <Button
         className="lucky-country-guess-button grid-item"
         variant="contained"

@@ -18,7 +18,7 @@ const RandomCountrySelector = () => {
     // it will return a number between 0 and size-1
     const randomNumber = Math.floor(Math.random() * size);
     const defaultValue = {
-      capital: [""],
+      capital: "",
       flag: "",
       name: "",
       population: 0,

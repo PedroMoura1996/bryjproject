@@ -11,7 +11,7 @@ export interface ICountryAPI {
 
 export interface ICountry {
   name: string;
-  capital: string[];
+  capital: string;
   region: string;
   subregion: string;
   flag: string;
