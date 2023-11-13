@@ -10,7 +10,7 @@ const GenericWebdesign = ({
   navbar = null,
 }: IGenericWebDesignProps) => {
   const { darkMode } = useTheme();
-  console.log(darkMode);
+
   return (
     <div
       className={`root-bryj ${

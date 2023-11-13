@@ -26,6 +26,11 @@ const LuckyCountry = () => {
     dispatch(countries.actions.updateGuessCapital(luckyCountry.capital[0]));
   };
 
+  const checkArrayisEmpty = () => {
+    if (luckyCountry.capital.length === 0) return "";
+    return luckyCountry.capital;
+  };
+
   return (
     <div
       className={`${
@@ -57,7 +62,7 @@ const LuckyCountry = () => {
         onChange={onChangeCapital}
         error={
           convertToLowerCase(guessCapital) !==
-          convertToLowerCase(luckyCountry?.capital[0] || "")
+          convertToLowerCase(checkArrayisEmpty()[0])
         }
       />
       <Button
