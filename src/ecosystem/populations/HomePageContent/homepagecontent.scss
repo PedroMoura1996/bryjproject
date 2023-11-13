@@ -3,11 +3,19 @@
 .home-page-content-container {
   padding: 1rem 0;
   .home-page-content-item {
+    border: 8px solid $bryj-light-background;
     background-color: $bryj-light-background;
     padding: 1rem;
     min-height: 8rem;
     border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+  // .home-page-content-item:hover {
+  //   cursor: pointer;
+  //   border: 8px solid $bryj-light-text;
+  // }
   @media (min-width: 900px) {
     display: grid;
     gap: 4rem 2rem;

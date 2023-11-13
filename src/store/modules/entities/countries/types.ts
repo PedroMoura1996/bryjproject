@@ -1,5 +1,5 @@
 export interface ICountryAPI {
-  name: { official: string };
+  name: { common: string };
   capital: string[];
   region: string;
   subregion: string;
@@ -21,6 +21,8 @@ export interface ICountry {
 export interface ICountryState {
   luckyCountry: ICountry;
   countries: ICountry[];
+  guessCapital: string;
+  guessCountry: string;
 }
 
 enum Etypes {

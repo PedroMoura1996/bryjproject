@@ -13,3 +13,11 @@ export const getLuckyCountry = createSelector(
   selectSelf,
   ({ luckyCountry }): ICountry => luckyCountry
 );
+
+export const getGuessValues = createSelector(
+  selectSelf,
+  ({ guessCapital, guessCountry }) => ({
+    guessCapital,
+    guessCountry,
+  })
+);

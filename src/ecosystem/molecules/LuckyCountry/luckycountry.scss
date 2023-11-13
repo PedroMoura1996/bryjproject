@@ -1,0 +1,30 @@
+@import "../../../variables";
+.lucky-country-container {
+  color: $bryj-light-text;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 0.5rem;
+  .grid-item {
+    max-height: 5rem;
+  }
+  .lucky-country-flag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+    grid-row: 1 / span end;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .lucky-country-guess-name,
+  .lucky-country-guess-text,
+  .lucky-country-guess-button,
+  .lucky-country-guess-capital {
+    grid-column: 2 / span end;
+    text-align: center;
+  }
+}

@@ -1,3 +1,5 @@
+import { LuckyCountry } from "../../molecules/LuckyCountry";
+import { RandomCountrySelector } from "../../molecules/RandomCountrySelector";
 import "./homepagecontent.scss";
 
 const HomePageContent = () => {
@@ -5,8 +7,12 @@ const HomePageContent = () => {
     <div className="home-page-content-container">
       <div className="home-page-content-item">square 1 with stuff</div>
       <div className="home-page-content-item">square 2 with stuff</div>
-      <div className="home-page-content-item">square 3 with stuff</div>
-      <div className="home-page-content-item">square 4 with stuff</div>
+      <div className="home-page-content-item">
+        <RandomCountrySelector />
+      </div>
+      <div className="home-page-content-item">
+        <LuckyCountry />
+      </div>
     </div>
   );
 };

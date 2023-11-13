@@ -7,7 +7,7 @@ export const modelCountriesData = ({
 }): ICountry[] => {
   return data.map((item) => {
     return {
-      name: item.name.official,
+      name: item.name.common,
       capital: item.capital,
       region: item.region,
       subregion: item.subregion,

@@ -15,24 +15,28 @@ export const onInitializeCountryStore = (
     countries: [],
     luckyCountry: {
       name: "",
-      capital: [],
+      capital: [""],
       region: "",
       subregion: "",
       flag: "",
       population: 0,
     },
+    guessCapital: "",
+    guessCountry: "",
   }
 ): ICountryState => {
   const tempState: ICountryState = {
     countries: [],
     luckyCountry: {
       name: "",
-      capital: [],
+      capital: [""],
       region: "",
       subregion: "",
       flag: "",
       population: 0,
     },
+    guessCapital: "",
+    guessCountry: "",
   };
   return { ...initialState, ...tempState };
 };
