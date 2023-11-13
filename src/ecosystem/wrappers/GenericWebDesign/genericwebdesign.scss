@@ -8,4 +8,20 @@
   .bryj-generic-content-container {
     flex: 1;
   }
+  .bryj-generic-footer-container,
+  .bryj-generic-navbar-container,
+  .bryj-generic-header-container {
+    background-color: $bryj-title;
+  }
+  .bryj-generic-footer-container {
+    border-radius: 0.5rem;
+  }
+  .bryj-generic-navbar-container {
+    padding: 1rem 0 0 1rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+  .bryj-generic-header-container {
+    padding: 1rem 0 0 1rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
 }

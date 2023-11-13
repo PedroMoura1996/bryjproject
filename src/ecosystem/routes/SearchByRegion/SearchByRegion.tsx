@@ -2,6 +2,7 @@ import React from "react";
 import { GenericWebdesign } from "../../wrappers/GenericWebDesign";
 import { HeaderTitle } from "../../atoms/HeaderTitle";
 import { Navbar } from "../../organisms/Navbar";
+import { Footer } from "../../organisms/Footer";
 
 const SearchByRegion = () => {
   return (
@@ -9,7 +10,7 @@ const SearchByRegion = () => {
       header={<HeaderTitle title="Search by Region!" />}
       navbar={<Navbar />}
       content={<h1>search content</h1>}
-      footer={<h1>search footer</h1>}
+      footer={<Footer />}
     />
   );
 };
