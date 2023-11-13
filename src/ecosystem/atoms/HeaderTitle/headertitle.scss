@@ -3,8 +3,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  .header-title {
+  .light {
     border: 0.3rem solid $bryj-primary-text-light;
+  }
+  .dark {
+    border: 0.3rem solid $bryj-primary-text-dark;
+  }
+  .header-title {
     font-size: 4rem;
     border-left: none;
     border-right: none;

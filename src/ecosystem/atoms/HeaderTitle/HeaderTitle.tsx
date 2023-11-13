@@ -7,7 +7,7 @@ const HeaderTitle = ({ title }: IHeaderTitleProps) => {
   const { darkMode, toggleTheme } = useTheme();
   return (
     <div className="header-title-container">
-      <h1 className="header-title">{title}</h1>
+      <h1 className={`${darkMode ? "dark" : "light"} header-title`}>{title}</h1>
       <div className="dark-mode-switch-container">
         <Switch value={darkMode} onClick={toggleTheme} />
         <span>Dark Mode</span>
