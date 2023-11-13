@@ -51,7 +51,7 @@ const LuckyCountry = () => {
         onChange={onChangeCapital}
         error={
           convertToLowerCase(guessCapital) !==
-          convertToLowerCase(luckyCountry.capital[0])
+          convertToLowerCase(luckyCountry?.capital[0] || "")
         }
       />
       <Button

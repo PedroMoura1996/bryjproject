@@ -10,6 +10,8 @@ const RandomCountrySelector = () => {
   const dispatch = useAppDispatch();
   const size = countriesList.length;
   const onRandomCountryHandler = () => {
+    // clean Guesses
+    dispatch(countries.actions.cleanGuesses());
     if (size < 1) return;
     // it will return a number between 0 and size-1
     const randomNumber = Math.floor(Math.random() * size);
