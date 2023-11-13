@@ -14,7 +14,7 @@
     align-items: center;
     flex-wrap: wrap;
     @media screen and (min-width: 900px) {
-      .bryj-li-hover:not(:first-child) {
+      .bryj-li:not(:first-child) {
         margin-left: 1rem;
       }
       justify-content: flex-start;
@@ -22,12 +22,10 @@
     @media screen and (max-width: 899px) {
       justify-content: center;
     }
-    .bryj-li-hover {
+    .bryj-li {
       text-align: center;
-
       padding: 0.5rem;
       font-size: 1.375rem;
-      border-bottom: 2px solid $bryj-light-background;
       @media screen and (min-width: 900px) {
         font-size: 1.375rem;
       }
@@ -35,29 +33,41 @@
         font-size: 0.875rem;
       }
     }
-    .bryj-li-hover:hover {
-      border-bottom: 2px solid $bryj-light-background;
-      background-color: $bryj-light-background;
+    .dark {
+      border-bottom: 2px solid $bryj-primary-text-dark;
+      color: $bryj-primary-text-dark;
     }
-    .bryj-animation-on-click:active {
-      border-radius: 6px;
-      background-color: $bryj-light-background;
-      opacity: 0.5;
+    .light {
+      border-bottom: 2px solid $bryj-primary-text-light;
+      color: $bryj-primary-text-light;
+    }
+    .light:active,
+    .light:hover {
+      border-bottom: 2px solid $bryj-primary-text-light;
+      background-color: $bryj-primary-background-light;
+      color: $bryj-primary-text-light;
+      border-radius: 0.25rem;
+    }
+    .dark:active,
+    .dark:hover {
+      border-bottom: 2px solid $bryj-primary-text-dark;
+      background-color: $bryj-primary-background-dark;
+      color: $bryj-primary-text-dark;
+      border-radius: 0.25rem;
     }
     a,
     li {
-      list-style: none; /* Remove o marcador de lista */
-      margin: 0; /* Remove as margens */
-      padding: 0; /* Remove o preenchimento */
-      text-decoration: none; /* Remove o sublinhado */
-      cursor: pointer; /* Define o cursor como ponteiro ao passar o mouse */
-      color: white;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      cursor: pointer;
     }
 
     a:focus,
     a:active,
     a:visited {
-      outline: none; /* Remove a borda de foco */
+      outline: none;
       text-decoration: none;
     }
   }

@@ -6,7 +6,7 @@ import { Footer } from "../../organisms/Footer";
 const AllCountries = () => {
   return (
     <GenericWebdesign
-      header={<HeaderTitle title="Search All the Countries!" />}
+      header={<HeaderTitle title="Search All the Countries" />}
       navbar={<Navbar />}
       content={<h1>all content</h1>}
       footer={<Footer />}

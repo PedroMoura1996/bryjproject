@@ -1,6 +1,7 @@
 @import "../../../variables";
 
 .bryj-footer-container {
+  padding: 0.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -35,7 +36,6 @@
     }
   }
   .bryj-clickable-item:hover {
-    background-color: bryj-dark-text;
     border-radius: 6px;
   }
 }

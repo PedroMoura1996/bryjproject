@@ -1,15 +1,21 @@
 @import "../../../variables";
 .header-title-container {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   .header-title {
-    border: 0.3rem solid $bryj-dark-text;
+    border: 0.3rem solid $bryj-primary-text-light;
     font-size: 4rem;
     border-left: none;
     border-right: none;
   }
+  .dark-mode-switch-container {
+    padding: 1rem;
+  }
   @media screen and (max-width: 899px) {
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     .header-title {
       font-size: 2rem;
     }
