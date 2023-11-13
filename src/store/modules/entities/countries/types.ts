@@ -19,6 +19,7 @@ export interface ICountry {
 }
 
 export interface ICountryState {
+  luckyCountry: ICountry;
   countries: ICountry[];
 }
 
