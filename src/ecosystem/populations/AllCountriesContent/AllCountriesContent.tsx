@@ -20,7 +20,6 @@ const AllCountriesContent = () => {
       style={{ height: `${window.innerHeight / 2}px` }}
     >
       <TextField
-        className="lucky-country-guess-name grid-item"
         variant="outlined"
         label="Filter by name"
         value={searchCountry}

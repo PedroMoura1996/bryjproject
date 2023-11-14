@@ -4,7 +4,6 @@ import { useTheme } from "../../wrappers/ThemeProvider/ThemeProvider";
 
 const HeaderTitle = () => {
   const { darkMode, toggleTheme } = useTheme();
-  console.log(darkMode);
   return (
     <div className="header-title-container">
       <h1 className={`${darkMode ? "dark" : "light"} header-title`}>

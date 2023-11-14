@@ -1,6 +1,6 @@
 import { onInitializeCountryStore } from "./../../../stores-commonstate";
 import { createSlice } from "@reduxjs/toolkit";
-import Etypes, { ICountry } from "./types";
+import Etypes, { ICountry, TRegion } from "./types";
 import { retrieveCountriesThunk } from "./thunks";
 
 const initialState = { ...onInitializeCountryStore() };
@@ -26,6 +26,9 @@ export default createSlice({
     },
     updateSearchCountry: (state, { payload }: { payload: string }) => {
       return { ...state, searchCountry: payload };
+    },
+    updateSearchRegion: (state, { payload }: { payload: TRegion }) => {
+      return { ...state, searchRegion: payload };
     },
   },
   extraReducers: (builder) =>

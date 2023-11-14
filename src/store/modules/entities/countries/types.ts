@@ -18,7 +18,10 @@ export interface ICountry {
   population: number;
 }
 
+export type TRegion = "1" | "2" | "3" | "4" | "5" | "-1";
+
 export interface ICountryState {
+  searchRegion: TRegion;
   luckyCountry: ICountry;
   countries: ICountry[];
   guessCapital: string;

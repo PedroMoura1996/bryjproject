@@ -14,6 +14,7 @@ export const onInitializeCountryStore = (
   initialState: ICountryState = {
     countries: [],
     searchCountry: "",
+    searchRegion: "-1",
     luckyCountry: {
       name: "",
       capital: "",
@@ -29,6 +30,7 @@ export const onInitializeCountryStore = (
   const tempState: ICountryState = {
     countries: [],
     searchCountry: "",
+    searchRegion: "-1",
     luckyCountry: {
       name: "",
       capital: "",

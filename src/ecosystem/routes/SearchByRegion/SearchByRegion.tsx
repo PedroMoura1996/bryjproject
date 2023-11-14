@@ -1,15 +1,15 @@
-import React from "react";
 import { GenericWebdesign } from "../../wrappers/GenericWebDesign";
 import { HeaderTitle } from "../../atoms/HeaderTitle";
 import { Navbar } from "../../organisms/Navbar";
 import { Footer } from "../../organisms/Footer";
+import SearchByRegionContent from "../../populations/SearchByRegionContent/SearchByRegionContent";
 
 const SearchByRegion = () => {
   return (
     <GenericWebdesign
       header={<HeaderTitle />}
       navbar={<Navbar />}
-      content={<h1>search content</h1>}
+      content={<SearchByRegionContent />}
       footer={<Footer />}
     />
   );
