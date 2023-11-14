@@ -1,4 +1,5 @@
 export enum ERoutes {
   HOME_PAGE = "/homepage",
-  DEATIL_COUNTRY = "/detail",
+  ALL_COUNTRIES = "/allcountries",
+  FILTER_BY_REGIONS = "/filterregion",
 }

@@ -10,7 +10,7 @@ const withLoadingHandler =
     return (
       <>
         {isLoading ? <BryjLoader /> : null}
-        <WrappedComponent {...props} />;
+        <WrappedComponent {...props} />
       </>
     );
   };

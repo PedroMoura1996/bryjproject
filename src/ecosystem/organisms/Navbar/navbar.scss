@@ -1,0 +1,74 @@
+@import "../../../variables";
+
+.bryj-navbar-container {
+  @media screen and (min-width: 900px) {
+    padding: 1rem 0;
+  }
+  @media screen and (max-width: 899px) {
+    padding: 0.5rem 0;
+  }
+
+  .bryj-navbar-ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    @media screen and (min-width: 900px) {
+      .bryj-li:not(:first-child) {
+        margin-left: 1rem;
+      }
+      justify-content: flex-start;
+    }
+    @media screen and (max-width: 899px) {
+      justify-content: center;
+    }
+    .bryj-li {
+      text-align: center;
+      padding: 0.5rem;
+      font-size: 1.375rem;
+      @media screen and (min-width: 900px) {
+        font-size: 1.375rem;
+      }
+      @media screen and (max-width: 899px) {
+        font-size: 0.875rem;
+      }
+    }
+    .dark {
+      border-bottom: 2px solid $bryj-primary-text-dark;
+      color: $bryj-primary-text-dark;
+    }
+    .light {
+      border-bottom: 2px solid $bryj-primary-text-light;
+      color: $bryj-primary-text-light;
+    }
+    .light:active,
+    .light:hover {
+      border-bottom: 2px solid $bryj-primary-text-light;
+      background-color: $bryj-primary-background-light;
+      color: $bryj-primary-text-light;
+      border-radius: 0.25rem;
+    }
+    .dark:active,
+    .dark:hover {
+      border-bottom: 2px solid $bryj-primary-text-dark;
+      background-color: $bryj-primary-background-dark;
+      color: $bryj-primary-text-dark;
+      border-radius: 0.25rem;
+    }
+    a,
+    li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    a:focus,
+    a:active,
+    a:visited {
+      outline: none;
+      text-decoration: none;
+    }
+  }
+}

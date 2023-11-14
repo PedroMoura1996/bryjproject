@@ -1,0 +1,41 @@
+@import "../../../variables";
+
+.bryj-footer-container {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit; /* Herda a cor do texto do elemento pai */
+    /* Muda o cursor para o estilo padrão de link */
+  }
+  .bryj-clickable-item {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    margin: 0 2rem;
+    @media screen and (max-width: 899px) {
+      margin: 0 0.5rem;
+    }
+
+    .set-size {
+      @media screen and (max-width: 899px) {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+      @media screen and (min-width: 900px) {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+  .bryj-clickable-item:hover {
+    border-radius: 6px;
+  }
+}

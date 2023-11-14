@@ -1,0 +1,44 @@
+$bryj-primary-background-light: #f0f5f5;
+$bryj-secondary-background-light: #d9e3e3;
+$bryj-primary-text-light: #333;
+
+$bryj-primary-background-dark: #1a202c;
+$bryj-secondary-background-dark: #2d3748;
+$bryj-primary-text-dark: #f0f5f5;
+
+// dark
+.primary-dark-background {
+  background-color: $bryj-primary-background-dark;
+}
+.secondary-dark-background {
+  background-color: $bryj-secondary-background-dark;
+}
+.primary-dark-text {
+  color: $bryj-primary-text-dark;
+}
+
+// light
+.primary-light-background {
+  background-color: $bryj-primary-background-light;
+}
+.secondary-light-background {
+  background-color: $bryj-secondary-background-light;
+}
+.primary-light-text {
+  color: $bryj-primary-text-light;
+}
+
+.dark-border {
+  border: 8px solid $bryj-secondary-background-dark;
+}
+
+.light-border {
+  border: 8px solid $bryj-secondary-background-light;
+}
+
+.dark:hover {
+  background-color: $bryj-primary-background-dark;
+}
+.light:hover {
+  background-color: $bryj-primary-background-light;
+}

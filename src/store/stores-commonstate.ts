@@ -11,8 +11,32 @@ export const onInitializeMainStore = (
   return { ...initialState, ...tempState };
 };
 export const onInitializeCountryStore = (
-  initialState: ICountryState = { countries: [] }
+  initialState: ICountryState = {
+    countries: [],
+    luckyCountry: {
+      name: "",
+      capital: "",
+      region: "",
+      subregion: "",
+      flag: "",
+      population: 0,
+    },
+    guessCapital: "",
+    guessCountry: "",
+  }
 ): ICountryState => {
-  const tempState: ICountryState = { countries: [] };
+  const tempState: ICountryState = {
+    countries: [],
+    luckyCountry: {
+      name: "",
+      capital: "",
+      region: "",
+      subregion: "",
+      flag: "",
+      population: 0,
+    },
+    guessCapital: "",
+    guessCountry: "",
+  };
   return { ...initialState, ...tempState };
 };

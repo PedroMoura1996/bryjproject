@@ -1,12 +1,13 @@
 import { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-import "./index.css";
+import "./index.scss";
 import App from "./ecosystem";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import store from "./store";
 import { BryjLoader } from "./ecosystem/atoms/BryjLoader";
+import { ThemeProvider } from "./ecosystem/wrappers/ThemeProvider";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -15,7 +16,9 @@ root.render(
   <Suspense fallback={<BryjLoader />}>
     <Provider store={store}>
       <BrowserRouter basename={window._env_.REACT_APP_BASE_DIRECTORY}>
-        <App />
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
       </BrowserRouter>
     </Provider>
   </Suspense>

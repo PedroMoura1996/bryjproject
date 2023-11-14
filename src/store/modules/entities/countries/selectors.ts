@@ -4,7 +4,20 @@ import Etypes, { ICountry } from "./types";
 
 const selectSelf = ({ [Etypes.SLICE_NAME]: Slice }: TRootState) => Slice;
 
-export const isLoadingSelector = createSelector(
+export const getCountriesSelector = createSelector(
   selectSelf,
   ({ countries }): ICountry[] => countries
+);
+
+export const getLuckyCountry = createSelector(
+  selectSelf,
+  ({ luckyCountry }): ICountry => luckyCountry
+);
+
+export const getGuessValues = createSelector(
+  selectSelf,
+  ({ guessCapital, guessCountry }) => ({
+    guessCapital,
+    guessCountry,
+  })
 );
