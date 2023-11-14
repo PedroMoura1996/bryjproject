@@ -1,3 +1,5 @@
+import { ERoutes } from "../../../enums/route-urls";
+import { GlobeButton } from "../../molecules/GlobeButton";
 import { LuckyCountry } from "../../molecules/LuckyCountry";
 import { RandomCountrySelector } from "../../molecules/RandomCountrySelector";
 import { useTheme } from "../../wrappers/ThemeProvider/ThemeProvider";
@@ -15,8 +17,12 @@ const HomePageContent = () => {
   };
   return (
     <div className="home-page-content-container">
-      <div className={getCss()}>square 1 with stuff</div>
-      <div className={getCss()}>square 2 with stuff</div>
+      <div className={getCss()}>
+        <GlobeButton route={ERoutes.ALL_COUNTRIES} name="by name" />
+      </div>
+      <div className={getCss()}>
+        <GlobeButton route={ERoutes.FILTER_BY_REGIONS} name="by region" />
+      </div>
       <div className={getCss()}>
         <RandomCountrySelector />
       </div>

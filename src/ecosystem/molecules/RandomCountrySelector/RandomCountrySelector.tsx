@@ -3,6 +3,7 @@ import countries from "../../../store/modules/entities/countries";
 import "./randomcountryselector.scss";
 import { useAppDispatch, useAppSelector } from "../../../store/reduxTyping";
 import { useTheme } from "../../wrappers/ThemeProvider/ThemeProvider";
+import { pickRandomFromArray } from "../../../utils/util";
 
 const RandomCountrySelector = () => {
   const { darkMode } = useTheme();
@@ -10,13 +11,10 @@ const RandomCountrySelector = () => {
     countries.selectors.getCountriesSelector
   );
   const dispatch = useAppDispatch();
-  const size = countriesList.length;
+
   const onRandomCountryHandler = () => {
     // clean Guesses
     dispatch(countries.actions.cleanGuesses());
-    if (size < 1) return;
-    // it will return a number between 0 and size-1
-    const randomNumber = Math.floor(Math.random() * size);
     const defaultValue = {
       capital: "",
       flag: "",
@@ -25,12 +23,10 @@ const RandomCountrySelector = () => {
       region: "",
       subregion: "",
     };
-    const luckyCountry = countriesList.find(
-      (_, index) => index === randomNumber
-    );
+    const luckyCountry = pickRandomFromArray(countriesList);
     dispatch(
       countries.actions.updateLuckyCountry({
-        ...(luckyCountry || defaultValue),
+        ...(luckyCountry ?? defaultValue),
       })
     );
   };

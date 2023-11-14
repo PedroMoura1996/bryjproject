@@ -7,7 +7,7 @@ import { GenericWebdesign } from "../../wrappers/GenericWebDesign";
 const HomePage = () => {
   return (
     <GenericWebdesign
-      header={<HeaderTitle title="Around the World" />}
+      header={<HeaderTitle />}
       navbar={<Navbar />}
       content={<HomePageContent />}
       footer={<Footer />}
