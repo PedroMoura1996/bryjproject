@@ -1,0 +1,28 @@
+@import "../../../variables";
+.globe-button-container {
+  display: flex;
+  align-items: center;
+  .globe-button {
+    // remove default button css
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .globe-button:hover {
+    .hover-light,
+    svg {
+      fill: $bryj-primary-text-light;
+    }
+    .hover-dark,
+    svg {
+      fill: $bryj-primary-text-dark;
+    }
+  }
+  .globe-svg {
+    width: 8rem;
+    height: auto;
+  }
+}
