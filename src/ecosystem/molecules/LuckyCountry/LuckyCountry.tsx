@@ -23,7 +23,7 @@ const LuckyCountry = () => {
 
   const revealHandler = () => {
     dispatch(countries.actions.updateGuessCountry(luckyCountry.name));
-    dispatch(countries.actions.updateGuessCapital(luckyCountry.capital[0]));
+    dispatch(countries.actions.updateGuessCapital(luckyCountry.capital));
   };
 
   return (
