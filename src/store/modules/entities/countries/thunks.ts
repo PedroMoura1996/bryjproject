@@ -3,6 +3,7 @@ import Etypes from "./types";
 import { retrieveCountriesService } from "./services/request";
 import { modelCountriesData } from "./services/models";
 import countries from "./";
+import { pickRandomFromArray } from "../../../../utils/util";
 
 export const retrieveCountriesThunk = createAsyncThunk(
   Etypes.THUNK_COUNTRIES,
@@ -11,12 +12,10 @@ export const retrieveCountriesThunk = createAsyncThunk(
       const response = await retrieveCountriesService();
       const modelData = modelCountriesData(response);
       // generate an initial lucky country
-      const size = modelData.length;
-      const randomNumber = Math.floor(Math.random() * size);
-      const luckyCountry = modelData.find((_, index) => index === randomNumber);
+      const luckyCountry = pickRandomFromArray(modelData);
       dispatch(
         countries.actions.updateLuckyCountry({
-          ...(luckyCountry || {
+          ...(luckyCountry ?? {
             capital: "",
             flag: "",
             name: "",
