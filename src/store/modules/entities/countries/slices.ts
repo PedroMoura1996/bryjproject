@@ -24,6 +24,9 @@ export default createSlice({
     cleanGuesses: (state) => {
       return { ...state, guessCountry: "", guessCapital: "" };
     },
+    updateSearchCountry: (state, { payload }: { payload: string }) => {
+      return { ...state, searchCountry: payload };
+    },
   },
   extraReducers: (builder) =>
     builder.addCase(retrieveCountriesThunk.fulfilled, (state, { payload }) => {

@@ -7,7 +7,7 @@ import { Footer } from "../../organisms/Footer";
 const SearchByRegion = () => {
   return (
     <GenericWebdesign
-      header={<HeaderTitle title="Search by Region" />}
+      header={<HeaderTitle />}
       navbar={<Navbar />}
       content={<h1>search content</h1>}
       footer={<Footer />}

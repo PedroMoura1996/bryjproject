@@ -13,6 +13,7 @@ export const onInitializeMainStore = (
 export const onInitializeCountryStore = (
   initialState: ICountryState = {
     countries: [],
+    searchCountry: "",
     luckyCountry: {
       name: "",
       capital: "",
@@ -27,6 +28,7 @@ export const onInitializeCountryStore = (
 ): ICountryState => {
   const tempState: ICountryState = {
     countries: [],
+    searchCountry: "",
     luckyCountry: {
       name: "",
       capital: "",

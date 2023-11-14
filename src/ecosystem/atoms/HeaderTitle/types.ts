@@ -1,3 +1,1 @@
-export interface IHeaderTitleProps {
-  title: string;
-}
+export interface IHeaderTitleProps {}

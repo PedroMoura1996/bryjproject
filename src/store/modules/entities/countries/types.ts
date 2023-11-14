@@ -23,6 +23,7 @@ export interface ICountryState {
   countries: ICountry[];
   guessCapital: string;
   guessCountry: string;
+  searchCountry: string;
 }
 
 enum Etypes {

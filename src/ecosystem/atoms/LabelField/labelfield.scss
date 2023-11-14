@@ -1,0 +1,9 @@
+.label-field-container {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  .bold {
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+}

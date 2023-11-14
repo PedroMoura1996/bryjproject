@@ -7,7 +7,7 @@ import { AllCountriesContent } from "../../populations/AllCountriesContent";
 const AllCountries = () => {
   return (
     <GenericWebdesign
-      header={<HeaderTitle title="Search All the Countries" />}
+      header={<HeaderTitle />}
       navbar={<Navbar />}
       content={<AllCountriesContent />}
       footer={<Footer />}

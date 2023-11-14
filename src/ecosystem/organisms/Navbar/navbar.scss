@@ -33,24 +33,26 @@
         font-size: 0.875rem;
       }
     }
+    .dark-border {
+      border-bottom: 1px solid $bryj-primary-text-dark;
+    }
+    .light-border {
+      border-bottom: 1px solid $bryj-primary-text-light;
+    }
     .dark {
-      border-bottom: 2px solid $bryj-primary-text-dark;
       color: $bryj-primary-text-dark;
     }
     .light {
-      border-bottom: 2px solid $bryj-primary-text-light;
       color: $bryj-primary-text-light;
     }
     .light:active,
     .light:hover {
-      border-bottom: 2px solid $bryj-primary-text-light;
       background-color: $bryj-primary-background-light;
       color: $bryj-primary-text-light;
       border-radius: 0.25rem;
     }
     .dark:active,
     .dark:hover {
-      border-bottom: 2px solid $bryj-primary-text-dark;
       background-color: $bryj-primary-background-dark;
       color: $bryj-primary-text-dark;
       border-radius: 0.25rem;

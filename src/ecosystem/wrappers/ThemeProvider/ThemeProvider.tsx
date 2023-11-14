@@ -4,6 +4,7 @@ import { IThemeProvider } from "./types";
 const ThemeContext = createContext({ darkMode: false, toggleTheme: () => {} });
 
 const ThemeProvider = ({ children }: IThemeProvider) => {
+  console.log("rendered");
   const [darkMode, setDarkMode] = useState<boolean>(false);
 
   const toggleTheme = () => {
