@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from "../../../store/reduxTyping";
 import { CountryListItem } from "../../molecules/CountryListItem";
 import { regions } from "../../../assets/contants";
 import { TRegion } from "../../../store/modules/entities/countries/types";
+import withExceptionHandler from "../../wrappers/ExceptionHandler/ExceptionHandler";
 
 const SearchByRegionContent = () => {
   const searchRegion = useAppSelector(countries.selectors.getSeacrhRegion);
@@ -58,4 +59,4 @@ const SearchByRegionContent = () => {
   );
 };
 
-export default SearchByRegionContent;
+export default withExceptionHandler(SearchByRegionContent);

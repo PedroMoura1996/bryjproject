@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router";
-import { World, WorldLight } from "../../../assets";
+
 import "./globebutton.scss";
 import { IGlobeButtonProps } from "./types";
 import { useTheme } from "../../wrappers/ThemeProvider/ThemeProvider";
 
-const GlobeButton = ({ route, name }: IGlobeButtonProps) => {
+const GlobeButton = ({ route, name, image, imageDark }: IGlobeButtonProps) => {
   const { darkMode } = useTheme();
 
   const navigate = useNavigate();
@@ -14,11 +14,7 @@ const GlobeButton = ({ route, name }: IGlobeButtonProps) => {
   return (
     <div className="globe-button-container">
       <button className="globe-button" onClick={navigateTo}>
-        {darkMode ? (
-          <WorldLight className="globe-svg hover-light" />
-        ) : (
-          <World className="globe-svg hover-dark" />
-        )}
+        {darkMode ? image : imageDark}
       </button>
       <h3>{`Filter All the Countris ${name}`}</h3>
     </div>

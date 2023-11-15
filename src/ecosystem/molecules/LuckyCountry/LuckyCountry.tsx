@@ -4,7 +4,6 @@ import Button from "@mui/material/Button";
 import countries from "../../../store/modules/entities/countries";
 import { useAppDispatch, useAppSelector } from "../../../store/reduxTyping";
 import { convertToLowerCase, isNull } from "../../../utils/util";
-import { useTheme } from "../../wrappers/ThemeProvider/ThemeProvider";
 
 const LuckyCountry = () => {
   const dispatch = useAppDispatch();

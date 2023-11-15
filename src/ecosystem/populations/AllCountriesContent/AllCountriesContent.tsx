@@ -4,6 +4,7 @@ import TextField from "@mui/material/TextField";
 import countries from "../../../store/modules/entities/countries";
 import { useAppDispatch, useAppSelector } from "../../../store/reduxTyping";
 import { CountryListItem } from "../../molecules/CountryListItem";
+import withExceptionHandler from "../../wrappers/ExceptionHandler/ExceptionHandler";
 
 const AllCountriesContent = () => {
   const searchCountry = useAppSelector(countries.selectors.getSeacrhCountry);
@@ -44,4 +45,4 @@ const AllCountriesContent = () => {
   );
 };
 
-export default AllCountriesContent;
+export default withExceptionHandler(AllCountriesContent);
