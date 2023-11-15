@@ -18,7 +18,7 @@ const HeaderTitle = () => {
           checked={darkMode}
           onClick={toggleTheme}
         />
-        <span>Dark Mode</span>
+        <span id="switch-text">{`Dark Mode ${darkMode ? "ON" : "OFF"}`}</span>
       </div>
     </div>
   );

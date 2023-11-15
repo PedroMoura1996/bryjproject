@@ -23,14 +23,13 @@ test.describe("HomePage Header", () => {
     // open url
     await page.goto("http://localhost:3000/bryj/homepage");
     // locate dark mode switch
-    const meuBotao = page.locator("#dark-mode-switch");
-    await meuBotao.click();
-    const gridElement = page.locator("#generic-container-header");
-    const computedStyle = await gridElement.evaluate((element) => {
-      const style = window.getComputedStyle(element);
-      return style.backgroundColor;
-    });
-    await expect(computedStyle).toBe("rgb(255, 0, 0)");
+    const switchSpan = page.locator("#switch-text");
+    const switchSpanText = await switchSpan.innerText();
+    expect(switchSpanText).toBe("Dark Mode OFF");
+    const mySwitchButton = page.locator("#dark-mode-switch");
+    await mySwitchButton.click();
+    const switchSpanTextNew = await switchSpan.innerText();
+    expect(switchSpanTextNew).toBe("Dark Mode ON");
   });
 });
 
