@@ -32,18 +32,18 @@
       @media screen and (max-width: 899px) {
         font-size: 0.875rem;
       }
+      .dark-link {
+        color: $bryj-primary-text-dark;
+      }
+      .light-link {
+        color: $bryj-primary-text-light;
+      }
     }
     .dark-border {
       border-bottom: 1px solid $bryj-primary-text-dark;
     }
     .light-border {
       border-bottom: 1px solid $bryj-primary-text-light;
-    }
-    .dark {
-      color: $bryj-primary-text-dark;
-    }
-    .light {
-      color: $bryj-primary-text-light;
     }
     .light:active,
     .light:hover {

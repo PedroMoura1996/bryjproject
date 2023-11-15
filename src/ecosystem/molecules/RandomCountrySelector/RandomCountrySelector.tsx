@@ -2,11 +2,9 @@ import Button from "@mui/material/Button";
 import countries from "../../../store/modules/entities/countries";
 import "./randomcountryselector.scss";
 import { useAppDispatch, useAppSelector } from "../../../store/reduxTyping";
-import { useTheme } from "../../wrappers/ThemeProvider/ThemeProvider";
 import { pickRandomFromArray } from "../../../utils/util";
 
 const RandomCountrySelector = () => {
-  const { darkMode } = useTheme();
   const countriesList = useAppSelector(
     countries.selectors.getCountriesSelector
   );
@@ -31,11 +29,7 @@ const RandomCountrySelector = () => {
     );
   };
   return (
-    <div
-      className={`${
-        darkMode ? "primary-dark-text" : "primary-light-text"
-      } random-country-container`}
-    >
+    <div className={`random-country-container`}>
       <h2>Lucky Country of the DAY</h2>
       <label>Click to get new Lucky Country</label>
       <Button
