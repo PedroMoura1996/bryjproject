@@ -34,7 +34,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:chrome": "playwright test --project=chromium tests/e2e/home.spec.ts",
+    "test:firefox": "playwright test --project=firefox tests/e2e/home.spec.ts",
+    "test:webkit": "playwright test --project=webkit tests/e2e/home.spec.ts",
+    "test:all": "npm run test:chrome && npm run test:firefox && npm run test:webkit",
+    "test:api": "playwright test --config=api.config.ts --project=Chromium tests/Api/api.spec.ts"
   },
   "eslintConfig": {
     "extends": [
