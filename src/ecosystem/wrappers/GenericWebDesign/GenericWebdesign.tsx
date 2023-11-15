@@ -12,15 +12,10 @@ const GenericWebdesign = ({
   const { darkMode } = useTheme();
 
   return (
-    <div
-      className={`root-bryj ${
-        darkMode
-          ? "primary-dark-text primary-dark-background"
-          : "primary-light-text primary-light-background"
-      }`}
-    >
+    <div className={`root-bryj ${darkMode ? "generic-dark" : "generic-light"}`}>
       <Grid container className="bryj-generic-web-container" direction="column">
         <Grid
+          id="generic-container-header"
           item
           xs={12}
           className={`bryj-generic-header-container ${

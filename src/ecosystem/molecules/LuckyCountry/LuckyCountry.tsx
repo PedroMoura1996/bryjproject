@@ -7,7 +7,6 @@ import { convertToLowerCase, isNull } from "../../../utils/util";
 import { useTheme } from "../../wrappers/ThemeProvider/ThemeProvider";
 
 const LuckyCountry = () => {
-  const { darkMode } = useTheme();
   const dispatch = useAppDispatch();
   const luckyCountry = useAppSelector(countries.selectors.getLuckyCountry);
   const { guessCapital, guessCountry } = useAppSelector(
@@ -27,11 +26,7 @@ const LuckyCountry = () => {
   };
 
   return (
-    <div
-      className={`${
-        darkMode ? "primary-dark-text" : "primary-light-text"
-      } lucky-country-container`}
-    >
+    <div className={`lucky-country-container`}>
       <div className="lucky-country-flag">
         {luckyCountry.flag ? (
           <img src={luckyCountry.flag} alt="country flag"></img>

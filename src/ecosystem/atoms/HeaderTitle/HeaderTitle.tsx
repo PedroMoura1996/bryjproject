@@ -6,11 +6,18 @@ const HeaderTitle = () => {
   const { darkMode, toggleTheme } = useTheme();
   return (
     <div className="header-title-container">
-      <h1 className={`${darkMode ? "dark" : "light"} header-title`}>
+      <h1
+        className={`${darkMode ? "dark" : "light"} header-title`}
+        id="header-title"
+      >
         Around the World
       </h1>
       <div className="dark-mode-switch-container">
-        <Switch checked={darkMode} onClick={toggleTheme} />
+        <Switch
+          id="dark-mode-switch"
+          checked={darkMode}
+          onClick={toggleTheme}
+        />
         <span>Dark Mode</span>
       </div>
     </div>

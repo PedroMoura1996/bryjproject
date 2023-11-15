@@ -10,28 +10,28 @@ const Navbar = () => {
   const getLiCss = (value: string) => {
     const selected = value === location.pathname;
     if (darkMode) {
-      return `bryj-li dark ${selected ? "dark-border" : ""}`;
+      return `bryj-li ${selected ? "dark-border" : ""}`;
     }
-    return `bryj-li light ${selected ? "light-border" : ""}`;
+    return `bryj-li ${selected ? "light-border" : ""}`;
   };
 
   const getLinkCss = () => {
-    return `${darkMode ? "primary-dark-text" : "primary-light-text"}`;
+    return `${darkMode ? "dark-link" : "light-link"}`;
   };
   return (
     <div className="bryj-navbar-container">
       <ul className="bryj-navbar-ul">
-        <li className={getLiCss("/homepage")}>
+        <li className={getLiCss("/homepage")} id="homepage">
           <Link className={getLinkCss()} to={ERoutes.HOME_PAGE}>
             Home Page
           </Link>
         </li>
-        <li className={getLiCss("/allcountries")}>
+        <li className={getLiCss("/allcountries")} id="allcountries">
           <Link className={getLinkCss()} to={ERoutes.ALL_COUNTRIES}>
             All Countries
           </Link>
         </li>
-        <li className={getLiCss("/filterregion")}>
+        <li className={getLiCss("/filterregion")} id="filterregion">
           <Link className={getLinkCss()} to={ERoutes.FILTER_BY_REGIONS}>
             By Region
           </Link>
