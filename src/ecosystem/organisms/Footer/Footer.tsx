@@ -15,6 +15,7 @@ const Footer = () => {
   return (
     <div className="bryj-footer-container">
       <div
+        data-test-id="instagram-profile"
         className={`bryj-clickable-item ${darkMode ? "dark" : "light"}`}
         onClick={() =>
           clickInstaHandler(String(window._env_.REACT_APP_INSTAGRAM))
@@ -24,6 +25,7 @@ const Footer = () => {
         <Hidden mdDown>Pedro Moura</Hidden>
       </div>
       <div
+        data-test-id="github-profile"
         className={`bryj-clickable-item ${darkMode ? "dark" : "light"}`}
         onClick={() => clickInstaHandler(String(window._env_.REACT_APP_GITHUB))}
       >
@@ -31,6 +33,7 @@ const Footer = () => {
         <Hidden mdDown>Pedro Moura</Hidden>
       </div>
       <div
+        data-test-id="linkedin-profile"
         className={`bryj-clickable-item ${darkMode ? "dark" : "light"}`}
         onClick={() =>
           clickInstaHandler(String(window._env_.REACT_APP_LINKEDIN))
@@ -41,6 +44,7 @@ const Footer = () => {
       </div>
 
       <a
+        data-test-id="mail-info"
         href={`mailto:${String(window._env_.REACT_APP_EMAIL)}`}
         className={`bryj-clickable-item ${darkMode ? "dark" : "light"}`}
       >
@@ -49,6 +53,7 @@ const Footer = () => {
       </a>
 
       <a
+        data-test-id="phone-info"
         href={`tel:+351${String(window._env_.REACT_APP_CONTACT)}`}
         className={`bryj-clickable-item ${darkMode ? "dark" : "light"}`}
       >
