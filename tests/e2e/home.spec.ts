@@ -174,6 +174,11 @@ test.describe("All countries Page", () => {
 
   test("filter by name and check array size", async ({ page }) => {
     await page.locator("#menu-allcountries").click();
+    const inputNameFilter = page.locator("#input-filter-id");
+    const countries = page.locator("#countries-container-id div[id*=itemId]");
+    await expect(countries).toHaveCount(250);
+    await inputNameFilter.fill("Portugal");
+    await expect(countries).toHaveCount(1);
   });
 });
 
@@ -188,5 +193,11 @@ test.describe("Filter by region Page", () => {
 
   test("filter by region and check array size", async ({ page }) => {
     await page.locator("#menu-filterregion").click();
+    const countries = page.locator("#countries-byregion-id div[id*=region]");
+    const dropdownFilter = page.locator("#dropdown-filter-id");
+    await expect(countries).toHaveCount(250);
+    await dropdownFilter.click();
+    await page.locator("#Europe").click();
+    await expect(countries).toHaveCount(53);
   });
 });
