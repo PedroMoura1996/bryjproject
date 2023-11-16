@@ -4,15 +4,15 @@ import "./navbar.scss";
 import { useTheme } from "../../wrappers/ThemeProvider/ThemeProvider";
 
 const Navbar = () => {
-  const { darkMode } = useTheme();
+  const { darkMode = false } = useTheme();
   const location = useLocation();
 
   const getLiCss = (value: string) => {
     const selected = value === location.pathname;
     if (darkMode) {
-      return `bryj-li ${selected ? "dark-border" : ""}`;
+      return `bryj-li dark ${selected ? "dark-border" : ""}`;
     }
-    return `bryj-li ${selected ? "light-border" : ""}`;
+    return `bryj-li light ${selected ? "light-border" : ""}`;
   };
 
   const getLinkCss = () => {

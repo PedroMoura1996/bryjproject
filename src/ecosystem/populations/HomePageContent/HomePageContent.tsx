@@ -12,9 +12,7 @@ const HomePageContent = () => {
 
   const getCss = () => {
     return `home-page-content-item ${
-      darkMode
-        ? "dark-border secondary-dark-background"
-        : "light-border secondary-light-background"
+      darkMode ? "secondary-dark-background" : "secondary-light-background"
     }`;
   };
   return (
