@@ -53,6 +53,7 @@ const Footer = () => {
       </a>
 
       <a
+        id="phone-info"
         data-test-id="phone-info"
         href={`tel:+351${String(window._env_.REACT_APP_CONTACT)}`}
         className={`bryj-clickable-item ${darkMode ? "dark" : "light"}`}

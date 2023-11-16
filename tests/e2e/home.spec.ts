@@ -25,7 +25,8 @@ test.describe("HomePage Header", () => {
   });
   test("open homepage and test header", async ({ page }) => {
     // locate title
-    const title = page.locator("#header-title");
+    // text selector
+    const title = page.locator("text=Around the World");
     const text = await title.innerText();
     expect(text).toBe("Around the World");
   });
@@ -34,6 +35,7 @@ test.describe("HomePage Header", () => {
     // open url
     await page.goto("http://localhost:3000/bryj/homepage");
     // locate dark mode switch
+    // id selector
     const switchSpan = page.locator("#switch-text");
     const switchSpanText = await switchSpan.innerText();
     expect(switchSpanText).toBe("Dark Mode OFF");
@@ -54,10 +56,18 @@ test.describe("Homepage navbar", () => {
   });
   test("open homepage and click navbar links", async ({ page }) => {
     // find and click all countries link;
-    await page.locator("#allcountries").click();
+    await expect(page).toHaveURL("http://localhost:3000/bryj/homepage");
+    await page.locator("#menu-allcountries").click();
     await expect(page).toHaveURL("http://localhost:3000/bryj/allcountries");
-    await page.locator("#filterregion").click();
+    await page.locator("#menu-filterregion").click();
     await expect(page).toHaveURL("http://localhost:3000/bryj/filterregion");
+  });
+
+  test("open homepage and check nav text", async ({ page }) => {
+    const texts = ["Home Page", "All Countries", "By Region"];
+
+    const navLinks = page.locator("#nav-bar-list li[id*=menu]");
+    expect(await navLinks.allTextContents()).toEqual(texts);
   });
 });
 
@@ -70,18 +80,20 @@ test.describe("HomePage footer", () => {
     await homePage.visit();
   });
   test("open homepage and validate footer icons", async ({ page }) => {
+    // using special property selector
     const footerInsta = page.locator('[data-test-id="instagram-profile"]');
     const footerGithub = page.locator('[data-test-id="github-profile"]');
     const footerLinkedin = page.locator('[data-test-id="linkedin-profile"]');
-    await expect(footerInsta).toHaveCount(1);
-    await expect(footerGithub).toHaveCount(1);
-    await expect(footerLinkedin).toHaveCount(1);
+    await expect(footerInsta).toBeVisible();
+    await expect(footerGithub).toBeVisible();
+    await expect(footerLinkedin).toBeVisible();
   });
   test("open homepage and validate footer achor tags", async ({ page }) => {
-    const phoneAnchor = page.locator('[data-test-id="phone-info"]');
+    // xpath selector
+    const phoneAnchor = page.locator('//*[@id="phone-info"]');
     const emailAnchor = page.locator('[data-test-id="mail-info"]');
-    await expect(phoneAnchor).toHaveCount(1);
-    await expect(emailAnchor).toHaveCount(1);
+    await expect(phoneAnchor).toBeVisible();
+    await expect(emailAnchor).toBeVisible();
 
     // Check the href attribute
     const hrefPhoneValue = await phoneAnchor.getAttribute("href");
