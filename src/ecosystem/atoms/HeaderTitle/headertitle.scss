@@ -14,7 +14,8 @@
     border-left: none;
     border-right: none;
   }
-  .dark-mode-switch-container {
+  .dark-mode-switch-container,
+  .translation-switch-container {
     padding: 1rem;
   }
   @media screen and (max-width: 899px) {
