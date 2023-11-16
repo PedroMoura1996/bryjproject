@@ -2,8 +2,10 @@ import { Link, useLocation } from "react-router-dom";
 import { ERoutes } from "../../../enums/route-urls";
 import "./navbar.scss";
 import { useTheme } from "../../wrappers/ThemeProvider/ThemeProvider";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const { darkMode = false } = useTheme();
   const location = useLocation();
 
@@ -23,17 +25,17 @@ const Navbar = () => {
       <ul className="bryj-navbar-ul" id="nav-bar-list">
         <li className={getLiCss("/homepage")} id="menu-homepage">
           <Link className={getLinkCss()} to={ERoutes.HOME_PAGE}>
-            Home Page
+            {t("homePage")}
           </Link>
         </li>
         <li className={getLiCss("/allcountries")} id="menu-allcountries">
           <Link className={getLinkCss()} to={ERoutes.ALL_COUNTRIES}>
-            All Countries
+            {t("allCountries")}
           </Link>
         </li>
         <li className={getLiCss("/filterregion")} id="menu-filterregion">
           <Link className={getLinkCss()} to={ERoutes.FILTER_BY_REGIONS}>
-            By Region
+            {t("byRegion")}
           </Link>
         </li>
       </ul>

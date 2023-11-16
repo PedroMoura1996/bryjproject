@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import "./globebutton.scss";
 import { IGlobeButtonProps } from "./types";
 import { useTheme } from "../../wrappers/ThemeProvider/ThemeProvider";
+import { useTranslation } from "react-i18next";
 
 const GlobeButton = ({
   route,
@@ -12,7 +13,7 @@ const GlobeButton = ({
   testId,
 }: IGlobeButtonProps) => {
   const { darkMode } = useTheme();
-
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const navigateTo = () => {
     navigate(route);
@@ -26,7 +27,7 @@ const GlobeButton = ({
       >
         {darkMode ? image : imageDark}
       </button>
-      <h3>{`Filter All the Countris ${name}`}</h3>
+      <h3>{t(`${name}`)}</h3>
     </div>
   );
 };

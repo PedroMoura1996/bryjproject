@@ -6,8 +6,10 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import "./footer.scss";
 import { Hidden } from "@mui/material";
 import { useTheme } from "../../wrappers/ThemeProvider/ThemeProvider";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const { darkMode } = useTheme();
   const clickInstaHandler = (page: string) => {
     window.open(page, "_blank", "noopener,noreferrer");
@@ -22,7 +24,7 @@ const Footer = () => {
         }
       >
         <InstagramIcon className="set-size" />
-        <Hidden mdDown>Pedro Moura</Hidden>
+        <Hidden mdDown>{t("username")}</Hidden>
       </div>
       <div
         data-test-id="github-profile"
@@ -30,7 +32,7 @@ const Footer = () => {
         onClick={() => clickInstaHandler(String(window._env_.REACT_APP_GITHUB))}
       >
         <GitHubIcon className="set-size" />
-        <Hidden mdDown>Pedro Moura</Hidden>
+        <Hidden mdDown>{t("username")}</Hidden>
       </div>
       <div
         data-test-id="linkedin-profile"
@@ -40,7 +42,7 @@ const Footer = () => {
         }
       >
         <LinkedInIcon className="set-size" />
-        <Hidden mdDown>Pedro Moura</Hidden>
+        <Hidden mdDown>{t("username")}</Hidden>
       </div>
 
       <a

@@ -1,0 +1,20 @@
+{
+  "headerTitle": "Around the World",
+  "darkMode": "Dark Mode ",
+  "on": "ON",
+  "off": "OFF",
+  "homePage": "Home Page",
+  "allCountries": "All Countries",
+  "byRegion": "By Region",
+  "username": "Pedro Moura",
+  "filterAllByName": "Filter All the Countries by name",
+  "filterAllByRegion": "Filter All the Countries by region",
+  "luckyCountry": "Lucky Country of the DAY",
+  "newLuckyCountry": "Click to get new Lucky Country",
+  "randomizer": "Randomizer",
+  "guess": "Try to guess",
+  "guessName": "Country's Name",
+  "guessCapital": "Country's capital",
+  "reveal": "Reveal Answer",
+  "filterInput": "Filter by name"
+}

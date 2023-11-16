@@ -5,8 +5,10 @@ import countries from "../../../store/modules/entities/countries";
 import { useAppDispatch, useAppSelector } from "../../../store/reduxTyping";
 import { CountryListItem } from "../../molecules/CountryListItem";
 import withExceptionHandler from "../../wrappers/ExceptionHandler/ExceptionHandler";
+import { useTranslation } from "react-i18next";
 
 const AllCountriesContent = () => {
+  const { t } = useTranslation();
   const searchCountry = useAppSelector(countries.selectors.getSeacrhCountry);
   const filteredCountries = useAppSelector(
     countries.selectors.getFilteredCountriesSelector(searchCountry)
@@ -23,7 +25,7 @@ const AllCountriesContent = () => {
       <TextField
         id="input-filter-id"
         variant="outlined"
-        label="Filter by name"
+        label={t("filterInput")}
         value={searchCountry}
         onChange={onChangeName}
       />

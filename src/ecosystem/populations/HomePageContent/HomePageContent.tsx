@@ -22,7 +22,7 @@ const HomePageContent = () => {
           image={<WorldLight className="globe-svg hover-light" />}
           imageDark={<World className="globe-svg hover-dark" />}
           route={ERoutes.ALL_COUNTRIES}
-          name="by name"
+          name="filterAllByName"
           testId="globe-name-id"
         />
       </div>
@@ -31,7 +31,7 @@ const HomePageContent = () => {
           image={<RegionLight className="globe-svg hover-light" />}
           imageDark={<RegionDark className="globe-svg hover-dark" />}
           route={ERoutes.FILTER_BY_REGIONS}
-          name="by region"
+          name="filterAllByRegion"
           testId="globe-region-id"
         />
       </div>

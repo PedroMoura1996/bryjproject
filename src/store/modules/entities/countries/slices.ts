@@ -2,8 +2,16 @@ import { onInitializeCountryStore } from "./../../../stores-commonstate";
 import { createSlice } from "@reduxjs/toolkit";
 import Etypes, { ICountry, TRegion } from "./types";
 import { retrieveCountriesThunk } from "./thunks";
+import {
+  onDefault,
+  onException,
+  onRequest,
+  onSuccessGenericArray,
+} from "../../../thunks-lyfecycle";
 
-const initialState = { ...onInitializeCountryStore() };
+const initialState = onDefault([Etypes.THUNK_COUNTRIES])({
+  ...onInitializeCountryStore(),
+});
 
 export default createSlice({
   initialState,
@@ -32,10 +40,17 @@ export default createSlice({
     },
   },
   extraReducers: (builder) =>
-    builder.addCase(retrieveCountriesThunk.fulfilled, (state, { payload }) => {
-      return {
-        ...state,
-        countries: [...state.countries, ...(payload || [])],
-      };
-    }),
+    builder
+      .addCase(
+        retrieveCountriesThunk.pending,
+        onRequest(Etypes.THUNK_COUNTRIES)
+      )
+      .addCase(
+        retrieveCountriesThunk.rejected,
+        onException(Etypes.THUNK_COUNTRIES)
+      )
+      .addCase(
+        retrieveCountriesThunk.fulfilled,
+        onSuccessGenericArray(Etypes.THUNK_COUNTRIES, "countries")
+      ),
 });
