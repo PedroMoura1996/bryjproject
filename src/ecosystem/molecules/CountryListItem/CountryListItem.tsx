@@ -8,6 +8,7 @@ import { ModalListItem } from "../ModalListItem";
 export const CountryListItem = ({ country }: ICountryListItemProps) => {
   const [openModal, setOpenModal] = useState(false);
   const { darkMode } = useTheme();
+
   return (
     <>
       <div
@@ -19,7 +20,8 @@ export const CountryListItem = ({ country }: ICountryListItemProps) => {
           className="country-flag"
           src={country.flag}
           alt="country flag"
-        ></img>
+          loading="lazy"
+        />
         <h4 className="start-item">{country.name}</h4>
         <div className="start-item">{country.capital}</div>
       </div>

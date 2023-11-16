@@ -11,9 +11,12 @@ import withExceptionHandler from "../../wrappers/ExceptionHandler/ExceptionHandl
 
 const SearchByRegionContent = () => {
   const searchRegion = useAppSelector(countries.selectors.getSeacrhRegion);
+
+  // selectors are memoized automatically
   const filteredCountries = useAppSelector(
     countries.selectors.getFilteredCountriesByRegionSelector(searchRegion)
   );
+
   const dispatch = useAppDispatch();
   const handleChange = (event: SelectChangeEvent) => {
     dispatch(
