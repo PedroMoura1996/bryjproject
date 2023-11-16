@@ -8,6 +8,8 @@ import { BrowserRouter } from "react-router-dom";
 import store from "./store";
 import { BryjLoader } from "./ecosystem/atoms/BryjLoader";
 import { ThemeProvider } from "./ecosystem/wrappers/ThemeProvider";
+import i18n from "./i18n";
+import { I18nextProvider } from "react-i18next";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -15,11 +17,13 @@ const root = ReactDOM.createRoot(
 root.render(
   <Suspense fallback={<BryjLoader />}>
     <Provider store={store}>
-      <BrowserRouter basename={window._env_.REACT_APP_BASE_DIRECTORY}>
-        <ThemeProvider>
-          <App />
-        </ThemeProvider>
-      </BrowserRouter>
+      <I18nextProvider i18n={i18n}>
+        <BrowserRouter basename={window._env_.REACT_APP_BASE_DIRECTORY}>
+          <ThemeProvider>
+            <App />
+          </ThemeProvider>
+        </BrowserRouter>
+      </I18nextProvider>
     </Provider>
   </Suspense>
 );

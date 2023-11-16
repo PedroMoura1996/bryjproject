@@ -4,9 +4,11 @@ import Button from "@mui/material/Button";
 import countries from "../../../store/modules/entities/countries";
 import { useAppDispatch, useAppSelector } from "../../../store/reduxTyping";
 import { convertToLowerCase, isNull } from "../../../utils/util";
+import { useTranslation } from "react-i18next";
 
 const LuckyCountry = () => {
   const dispatch = useAppDispatch();
+  const { t } = useTranslation();
   const luckyCountry = useAppSelector(countries.selectors.getLuckyCountry);
   const { guessCapital, guessCountry } = useAppSelector(
     countries.selectors.getGuessValues
@@ -31,12 +33,12 @@ const LuckyCountry = () => {
           <img src={luckyCountry.flag} alt="country flag"></img>
         ) : null}
       </div>
-      <h3 className="lucky-country-guess-text grid-item">Try to guess</h3>
+      <h3 className="lucky-country-guess-text grid-item">{t("guess")}</h3>
       <TextField
         id="guess-name-id"
         className="lucky-country-guess-name grid-item"
         variant="outlined"
-        label="Country's Name"
+        label={t("guessName")}
         value={guessCountry}
         error={
           convertToLowerCase(guessCountry) !==
@@ -50,7 +52,7 @@ const LuckyCountry = () => {
           id="guess-capital-id"
           className="lucky-country-guess-capital grid-item"
           variant="outlined"
-          label="Country's Capital"
+          label={t("guessCapital")}
           value={guessCapital}
           onChange={onChangeCapital}
           error={
@@ -65,7 +67,7 @@ const LuckyCountry = () => {
         variant="contained"
         onClick={revealHandler}
       >
-        Reveal Answer
+        {t("reveal")}
       </Button>
     </div>
   );
