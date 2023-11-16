@@ -1,3 +1,20 @@
 {
-  "headerTitle": "Around the World"
+  "headerTitle": "Dans le monde entier",
+  "darkMode": "Mode sombre ",
+  "on": "lié",
+  "off": "DE",
+  "homePage": "Page d'accueil",
+  "allCountries": "Tous les pays",
+  "byRegion": "Par région",
+  "username": "Pedro Moura",
+  "filterAllByName": "Filtrer tous les pays par nom",
+  "filterAllByRegion": "Filtrer tous les pays par région",
+  "luckyCountry": "Pays chanceux du jour",
+  "newLuckyCountry": "Cliquez pour obtenir le nouveau pays chanceux",
+  "randomizer": "Randomizer",
+  "guess": "Essayez de deviner",
+  "guessName": "Nom du pays",
+  "guessCapital": "Capitale du pays",
+  "reveal": "Révéler la réponse",
+  "filterInput": "Filtrer par nom"
 }
