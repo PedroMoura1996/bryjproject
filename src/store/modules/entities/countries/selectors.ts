@@ -3,6 +3,7 @@ import { TRootState } from "../../../";
 import Etypes, { ICountry } from "./types";
 import { isNull } from "../../../../utils/util";
 import { regions } from "../../../../assets/contants";
+import { hasExceptionThunk, isLoadingThunk } from "../../../thunks-lyfecycle";
 
 const selectSelf = ({ [Etypes.SLICE_NAME]: Slice }: TRootState) => Slice;
 
@@ -54,4 +55,13 @@ export const getSeacrhCountry = createSelector(
 export const getSeacrhRegion = createSelector(
   selectSelf,
   ({ searchRegion }) => searchRegion
+);
+
+export const isLoadingCountries = createSelector(
+  selectSelf,
+  isLoadingThunk(Etypes.THUNK_COUNTRIES)
+);
+export const hasExceptionCountries = createSelector(
+  selectSelf,
+  hasExceptionThunk(Etypes.THUNK_COUNTRIES)
 );
