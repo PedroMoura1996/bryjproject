@@ -4,7 +4,13 @@ import "./globebutton.scss";
 import { IGlobeButtonProps } from "./types";
 import { useTheme } from "../../wrappers/ThemeProvider/ThemeProvider";
 
-const GlobeButton = ({ route, name, image, imageDark }: IGlobeButtonProps) => {
+const GlobeButton = ({
+  route,
+  name,
+  image,
+  imageDark,
+  testId,
+}: IGlobeButtonProps) => {
   const { darkMode } = useTheme();
 
   const navigate = useNavigate();
@@ -13,7 +19,11 @@ const GlobeButton = ({ route, name, image, imageDark }: IGlobeButtonProps) => {
   };
   return (
     <div className="globe-button-container">
-      <button className="globe-button" onClick={navigateTo}>
+      <button
+        className="globe-button"
+        onClick={navigateTo}
+        data-test-id={testId}
+      >
         {darkMode ? image : imageDark}
       </button>
       <h3>{`Filter All the Countris ${name}`}</h3>

@@ -33,6 +33,7 @@ const LuckyCountry = () => {
       </div>
       <h3 className="lucky-country-guess-text grid-item">Try to guess</h3>
       <TextField
+        id="guess-name-id"
         className="lucky-country-guess-name grid-item"
         variant="outlined"
         label="Country's Name"
@@ -46,6 +47,7 @@ const LuckyCountry = () => {
       {/* some countries do not bring a capital */}
       {isNull(luckyCountry.capital) ? null : (
         <TextField
+          id="guess-capital-id"
           className="lucky-country-guess-capital grid-item"
           variant="outlined"
           label="Country's Capital"
@@ -58,6 +60,7 @@ const LuckyCountry = () => {
         />
       )}
       <Button
+        id="reveal-data-id"
         className="lucky-country-guess-button grid-item"
         variant="contained"
         onClick={revealHandler}

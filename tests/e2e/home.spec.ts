@@ -104,3 +104,89 @@ test.describe("HomePage footer", () => {
     );
   });
 });
+
+test.describe("Home Page main content", () => {
+  let homePage: HomePage;
+
+  test.beforeEach(async ({ page }) => {
+    homePage = new HomePage(page);
+    // Centrelize the logic that it is used sevveral times
+    await homePage.visit();
+  });
+  test("check filter all button", async ({ page }) => {
+    const globeButton = page.locator('[data-test-id="globe-name-id"]');
+    await globeButton.click();
+    await expect(page).toHaveURL("http://localhost:3000/bryj/allcountries");
+  });
+  test("check filter by region button", async ({ page }) => {
+    const globeButton = page.locator('[data-test-id="globe-region-id"]');
+    await globeButton.click();
+    await expect(page).toHaveURL("http://localhost:3000/bryj/filterregion");
+  });
+  test("check lucky country randomizer", async ({ page }) => {
+    const h2Randomizer = page.locator("div.random-country-container h2");
+    const labelRandomizer = page.locator("div.random-country-container label");
+    const buttonRandomizer = page.locator(
+      "div.random-country-container button"
+    );
+
+    await expect(buttonRandomizer).toBeVisible();
+    await expect(h2Randomizer).toBeVisible();
+    await expect(labelRandomizer).toBeVisible();
+
+    await expect(h2Randomizer).toHaveText("Lucky Country of the DAY");
+    await expect(labelRandomizer).toHaveText("Click to get new Lucky Country");
+  });
+  test("check lucky country input box", async ({ page }) => {
+    const inputName = page.locator("#guess-name-id");
+    const inputCapital = page.locator("#guess-capital-id");
+    await inputName.fill("France");
+    await inputCapital.fill("Paris");
+    await expect(inputName).toHaveValue("France");
+    await expect(inputCapital).toHaveValue("Paris");
+  });
+  test("check reveal answer button", async ({ page }) => {
+    const inputName = page.locator("#guess-name-id");
+    const inputCapital = page.locator("#guess-capital-id");
+    const buttonReveal = page.locator("#reveal-data-id");
+    const buttonRandomizer = page.locator(
+      "div.random-country-container button"
+    );
+    await buttonRandomizer.click();
+    await expect(inputName).toHaveValue("");
+    await expect(inputCapital).toHaveValue("");
+    await expect(buttonReveal).toBeVisible();
+    await buttonReveal.click();
+    // assert different values
+    await expect(inputCapital).not.toHaveValue("");
+    await expect(inputName).not.toHaveValue("");
+  });
+});
+
+test.describe("All countries Page", () => {
+  let homePage: HomePage;
+
+  test.beforeEach(async ({ page }) => {
+    homePage = new HomePage(page);
+    // Centrelize the logic that it is used several times
+    await homePage.visit();
+  });
+
+  test("filter by name and check array size", async ({ page }) => {
+    await page.locator("#menu-allcountries").click();
+  });
+});
+
+test.describe("Filter by region Page", () => {
+  let homePage: HomePage;
+
+  test.beforeEach(async ({ page }) => {
+    homePage = new HomePage(page);
+    // Centrelize the logic that it is used sevveral times
+    await homePage.visit();
+  });
+
+  test("filter by region and check array size", async ({ page }) => {
+    await page.locator("#menu-filterregion").click();
+  });
+});
