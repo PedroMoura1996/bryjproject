@@ -5,4 +5,5 @@ export interface IGlobeButtonProps {
   name: string;
   image: React.ReactNode;
   imageDark: React.ReactNode;
+  testId: string;
 }

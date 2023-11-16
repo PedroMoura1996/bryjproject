@@ -14,7 +14,7 @@ export default defineConfig({
   expect: {
     timeout: 5000,
   },
-  testDir: "./tests",
+  testDir: "./tests/e2e",
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -43,12 +43,12 @@ export default defineConfig({
 
     {
       name: "firefox",
-      use: { ...devices["Desktop Firefox"], headless: false },
+      use: { ...devices["Desktop Firefox"] },
     },
 
     {
       name: "webkit",
-      use: { ...devices["Desktop Safari"], headless: false },
+      use: { ...devices["Desktop Safari"] },
     },
 
     /* Test against mobile viewports. */

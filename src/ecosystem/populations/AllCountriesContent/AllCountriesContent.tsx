@@ -21,15 +21,21 @@ const AllCountriesContent = () => {
       style={{ height: `${window.innerHeight / 2}px` }}
     >
       <TextField
+        id="input-filter-id"
         variant="outlined"
         label="Filter by name"
         value={searchCountry}
         onChange={onChangeName}
       />
-      <Grid container className="all-countries-list">
+      <Grid
+        container
+        className="all-countries-list"
+        id="countries-container-id"
+      >
         {filteredCountries.map((country) => {
           return (
             <Grid
+              id={`itemId${country.name}-${country.capital}`}
               item
               xs={12}
               sm={6}

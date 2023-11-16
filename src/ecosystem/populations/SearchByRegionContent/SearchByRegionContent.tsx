@@ -27,20 +27,20 @@ const SearchByRegionContent = () => {
     >
       <Select
         labelId="Pick your Region"
-        id="region-id"
+        id="dropdown-filter-id"
         value={searchRegion}
         label="Age"
         onChange={handleChange}
       >
         {regions.map((region) => {
           return (
-            <MenuItem key={region.id} value={region.id}>
+            <MenuItem key={region.value} id={region.value} value={region.id}>
               {region.value}
             </MenuItem>
           );
         })}
       </Select>
-      <Grid container className="search-region-list">
+      <Grid container className="search-region-list" id="countries-byregion-id">
         {filteredCountries.map((country) => {
           return (
             <Grid
@@ -49,6 +49,7 @@ const SearchByRegionContent = () => {
               sm={6}
               md={4}
               key={`${country.name}-${country.capital}`}
+              id={`region${country.name}-${country.capital}`}
             >
               <CountryListItem country={country} />
             </Grid>
