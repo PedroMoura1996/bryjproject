@@ -25,8 +25,14 @@
 .generic-light {
   color: $bryj-primary-text-light;
   background-color: $bryj-primary-background-light;
+  .bryj-generic-header-container {
+    background-color: $bryj-secondary-background-light;
+  }
 }
 .generic-dark {
   color: $bryj-primary-text-dark;
   background-color: $bryj-primary-background-dark;
+  .bryj-generic-header-container {
+    background-color: $bryj-secondary-background-dark;
+  }
 }

@@ -18,37 +18,17 @@ const GenericWebdesign = ({
           id="generic-container-header"
           item
           xs={12}
-          className={`bryj-generic-header-container ${
-            darkMode
-              ? "secondary-dark-background"
-              : "secondary-light-background"
-          }`}
+          className="bryj-generic-header-container"
         >
           <header>{header}</header>
         </Grid>
-        <Grid
-          item
-          xs={12}
-          className={`bryj-generic-navbar-container ${
-            darkMode
-              ? "secondary-dark-background"
-              : "secondary-light-background"
-          }`}
-        >
+        <Grid item xs={12} className="bryj-generic-header-container">
           <nav>{navbar}</nav>
         </Grid>
         <Grid item xs={12} className="bryj-generic-content-container">
           <main>{content}</main>
         </Grid>
-        <Grid
-          item
-          xs={12}
-          className={`bryj-generic-footer-container ${
-            darkMode
-              ? "secondary-dark-background"
-              : "secondary-light-background"
-          }`}
-        >
+        <Grid item xs={12} className="bryj-generic-header-container">
           <footer>{footer}</footer>
         </Grid>
       </Grid>

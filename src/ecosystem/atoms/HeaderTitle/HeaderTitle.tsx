@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import "./headertitle.scss";
 import { useTheme } from "../../wrappers/ThemeProvider/ThemeProvider";
 import { useState } from "react";
+import { TranslationButton } from "../TranslationButton";
 
 const HeaderTitle = () => {
   const {
@@ -12,10 +13,9 @@ const HeaderTitle = () => {
   const { darkMode, toggleTheme } = useTheme();
   const [lang, setLang] = useState(language);
 
-  const handleChangeHandler = () => {
-    const newLanguage = lang === "en" ? "fr" : "en";
-    changeLanguage(newLanguage);
-    setLang(newLanguage);
+  const handleChangeHandler = (_lang: string) => {
+    changeLanguage(_lang);
+    setLang(_lang);
   };
 
   return (
@@ -37,12 +37,16 @@ const HeaderTitle = () => {
         }`}</span>
       </div>
       <div className="translation-switch-container">
-        <Switch
-          id="change-language"
-          checked={lang === "en"}
-          onClick={handleChangeHandler}
+        <TranslationButton
+          label="en"
+          onClick={() => handleChangeHandler("en")}
+          selected={lang === "en"}
         />
-        <span id="switch-text-lang">{`${lang === "en" ? "EN" : "FR"}`}</span>
+        <TranslationButton
+          label="fr"
+          onClick={() => handleChangeHandler("fr")}
+          selected={lang === "fr"}
+        />
       </div>
     </div>
   );

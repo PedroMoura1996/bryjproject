@@ -16,5 +16,9 @@
   "guessName": "Country's Name",
   "guessCapital": "Country's capital",
   "reveal": "Reveal Answer",
-  "filterInput": "Filter by name"
+  "filterInput": "Filter by name",
+  "en": "EN",
+  "fr": "FR",
+  "errorTitle": "Ups.... Something went wrong",
+  "errorsubTitle": "Please try again later"
 }
