@@ -11,9 +11,7 @@ const HomePageContent = () => {
   const { darkMode } = useTheme();
 
   const getCss = () => {
-    return `home-page-content-item ${
-      darkMode ? "secondary-dark-background" : "secondary-light-background"
-    }`;
+    return `home-page-content-item ${darkMode ? "dark" : "light"}`;
   };
   return (
     <div className="home-page-content-container">

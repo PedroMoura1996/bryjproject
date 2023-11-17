@@ -38,10 +38,10 @@
   .bryj-clickable-item:hover {
     border-radius: 6px;
   }
-  .dark:hover {
+  .dark.bryj-clickable-item:hover {
     background-color: $bryj-primary-background-dark;
   }
-  .light:hover {
+  .light.bryj-clickable-item:hover {
     background-color: $bryj-primary-background-light;
   }
 }

@@ -35,9 +35,9 @@
   border-radius: 8px;
 }
 
-.dark:hover {
+.dark.country-list-item-container:hover {
   background-color: $bryj-secondary-background-dark;
 }
-.light:hover {
+.light.country-list-item-container:hover {
   background-color: $bryj-secondary-background-light;
 }

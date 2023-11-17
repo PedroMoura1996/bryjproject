@@ -10,6 +10,12 @@
     align-items: center;
     justify-content: center;
   }
+  .dark.home-page-content-item {
+    background-color: $bryj-secondary-background-dark;
+  }
+  .light.home-page-content-item {
+    background-color: $bryj-secondary-background-light;
+  }
   @media (min-width: 900px) {
     display: grid;
     gap: 4rem 2rem;

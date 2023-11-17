@@ -18,5 +18,7 @@
   "reveal": "Reveal Answer",
   "filterInput": "Filter by name",
   "en": "EN",
-  "fr": "FR"
+  "fr": "FR",
+  "errorTitle": "Ups.... Something went wrong",
+  "errorsubTitle": "Please try again later"
 }
