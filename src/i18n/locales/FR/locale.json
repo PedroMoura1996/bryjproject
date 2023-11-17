@@ -16,5 +16,7 @@
   "guessName": "Nom du pays",
   "guessCapital": "Capitale du pays",
   "reveal": "Révéler la réponse",
-  "filterInput": "Filtrer par nom"
+  "filterInput": "Filtrer par nom",
+  "en": "EN",
+  "fr": "FR"
 }
